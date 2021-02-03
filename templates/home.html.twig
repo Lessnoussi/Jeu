@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title 'Mon Agence' %}
+{% block body %}
+    <div class="container">
+
+    </div>
+    <div class="jumbotron text-center" >
+        <h1> Jeu de carte</h1>
+
+    </div>
+    <div class="container">
+        <div class="row">
+
+        <h2>Les 2 main</h2>
+        <div class="col">
+            <h4>La main non triée</h4>
+            <div class="row ">
+                {% for carteN in nonSortedCartes%}
+                    <div class="row-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    {{carteN.couleurType}} ({{carteN.valeurType}})
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor%}
+            </div>
+        </div>
+        <div class="col">
+            <h4>La main triée</h4>
+            <div class="row ">
+                {% for carte in cartes%}
+                    <div class="row-3">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="card-text">
+                                    {{carte.couleurType}} ({{carte.valeurType}})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor%}
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}
